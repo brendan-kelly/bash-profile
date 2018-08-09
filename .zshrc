@@ -185,19 +185,3 @@ prompt_context() {
 prompt_dir() {
   prompt_segment blue black '%c'
 }
-
-# Hack Capital Logstash env vars
-# Apparently "this should always be set" (re: Thales)
-export NODE_ENV="development"
-
-# Used by logstash
-export SLACK_FATAL_WEBHOOK_URL=https://hooks.slack.com/services/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
-export SLACK_FATAL_CHANNEL='#liondesk-errors-test'
-
-# Used by logger-nodejs
-export LOGGER_PLUGINS_LOGSTASH_HOST=0.0.0.0
-export LOGGER_PLUGINS_LOGSTASH_PORT=5000
-export LOGGER_PLUGINS_LOGSTASH_ENABLED='true' # if true, sends to logstash; visible in logstash docker logs
-export LOGGER_PLUGINS_LOCALFILE_ENABLED='false' # if true, writes to local files
-export LOGGER_PLUGINS_STDOUT_ENABLED='true' # set this to false if you don't want it cluttering your terminal
-
